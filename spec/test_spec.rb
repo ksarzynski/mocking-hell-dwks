@@ -1,5 +1,6 @@
-require '../lib/test'
-RSpec.describe 'test' do
+require 'spec_helper'
+
+describe '#test' do
 class String
   def palindrome?
     self == self.reverse
