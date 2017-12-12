@@ -1,5 +1,3 @@
-# mocking-hell-dwks
-mocking-hell-dwks created by GitHub Classroom
 ## Projekt zespołowy z przedmiotu: Testowanie Aplikacji Ruby 2017
 #### Prowadzący - dr [Włodzimierz Bzyl](https://github.com/wbzyl)
 
