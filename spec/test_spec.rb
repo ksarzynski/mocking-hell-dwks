@@ -1,4 +1,4 @@
-require_relative '../lib/test'
+require '../lib/test'
 RSpec.describe 'test' do
 class String
   def palindrome?
