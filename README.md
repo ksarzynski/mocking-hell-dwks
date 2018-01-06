@@ -9,7 +9,7 @@
 
 |Travis CI   |CC Maintainability   |CC Test Coverage   |Coverity Status   |
 |:-:|:-:|:-:|:-:|
-|[![Build Status](https://travis-ci.org/my-rspec/mocking-hell-dwks.svg?branch=master)](https://travis-ci.org/my-rspec/mocking-hell-dwks)   |[![Maintainability](	https://api.codeclimate.com/v1/badges/7ee8a9d2aa69693fef05/maintainability)](https://codeclimate.com/github/my-rspec/mocking-hell-dwks/maintainability)   |[![Test Coverage](https://api.codeclimate.com/v1/badges/7ee8a9d2aa69693fef05/test_coverage)](https://codeclimate.com/github/my-rspec/mocking-hell-dwks/test_coverage)|[![Coverity Status](https://scan.coverity.com/projects/14783/badge.svg)](https://scan.coverity.com/projects/my-rspec-mocking-hell-dwks)   |
+|[![Build Status](https://travis-ci.org/my-rspec/mocking-hell-dwks.svg?branch=master)](https://travis-ci.org/my-rspec/mocking-hell-dwks)   |[![Maintainability](https://api.codeclimate.com/v1/badges/e0280f4cbbe521f195f7/maintainability)](https://codeclimate.com/github/my-rspec/mocking-hell-dwks/maintainability)   |[![Test Coverage](https://api.codeclimate.com/v1/badges/e0280f4cbbe521f195f7/test_coverage)](https://codeclimate.com/github/my-rspec/mocking-hell-dwks/test_coverage)|[![Coverity Status](https://scan.coverity.com/projects/14783/badge.svg)](https://scan.coverity.com/projects/my-rspec-mocking-hell-dwks)   |
 
 
 ### Temat Projektu
