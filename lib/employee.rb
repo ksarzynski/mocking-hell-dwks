@@ -1,6 +1,6 @@
 class Employee
 
-  attr_accessor :id, :firstname, :lastname, :salary, :employee_number
+  attr_accessor :id, :firstname, :lastname, :salary
 
   def initialize(id, firstname, lastname, salary)
     @id = id
