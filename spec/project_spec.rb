@@ -4,8 +4,8 @@ RSpec.describe 'Project' do
   context '#new' do
     let(:id) { 1 }
     let(:name) { 'projekt' }
-    let(:start_date) { Date.parse('2018-01-09')  }
-    let(:deadline_date) { Date.parse('2018-01-09')  }
+    let(:start_date) { Date.parse('2018-01-05 00:00:00')  }
+    let(:deadline_date) { Date.parse('2018-01-05 00:00:00')  }
     subject(:project) { Project.new id, name, start_date, deadline_date}
 
     it 'creates a new project' do
@@ -33,10 +33,10 @@ RSpec.describe 'Project' do
   end
 
   context '#to_s' do
-    subject(:project) { Project.new 1, 'project1', Date.parse('2018-01-05'), Date.parse('2018-01-05') }
+    subject(:project) { Project.new 1, 'project1', Date.parse('2018-01-05 00:00:00'), Date.parse('2018-01-05 00:00:00') }
 
     it 'returns correct output' do
-      expect(project.to_s).to be_a(String).and include('project1 - 2018-01-05 - 2018-01-05')
+      expect(project.to_s).to be_a(String).and include('project1 - 2018-01-05 00:00:00 - 2018-01-05 00:00:00')
     end
   end
 end
