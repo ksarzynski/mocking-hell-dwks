@@ -1,11 +1,11 @@
 require_relative 'spec_helper'
 
-describe '#new' do
-  context '' do
+RSpec.describe 'Employee' do
+context '#new' do
     let(:id) { 1 }
     let(:firstname) { 'Dawid' }
     let(:lastname) { 'Wiecko' }
-    let(:salary) { 111 }
+    let(:salary) { 111.00 }
     subject(:employee) { Employee.new id, firstname, lastname, salary }
 
     it 'creates a new employee' do
@@ -30,9 +30,16 @@ describe '#new' do
     it 'returns correct salary' do
       expect(employee.salary).to eq(salary)
     end
-
+end
+context '#to_s' do
+    let(:id) { 1 }
+    let(:firstname) { double('firstname', firstname: 'Dawid') }
+    let(:lastname) { double('lastname', lastname: 'Wiecko') }
+    let(:salary)   { double('salary', salary: 1200.00) }
+    subject(:employee) { Employee.new id, firstname, lastname, salary }
+    
     it 'returns correct employee' do
-      expect(employee.to_s).to be_a(String).and eq("#{firstname} #{lastname} #{salary}")
+      expect(employee.to_s).to be_a(String).and include(firstname.to_s, lastname.to_s, salary.to_s)
     end
   end
 end
