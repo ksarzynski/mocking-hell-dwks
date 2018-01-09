@@ -141,5 +141,30 @@ it 'list of employees should initialize without errors' do
 end
 end
 
+context '#create_sample_development' do
+it 'create sample development should initialize without errors' do
+     expect {operations.create_sample_development }.not_to raise_error
+end
+end
+
+context '#insert_data_edit_employee' do
+it 'insert data edit employee should initialize with errors with null values' do
+     expect {operations.insert_data_edit_employee(01, '', '', '') }.to raise_error
+end
+end
+
+context '#edit_login_password' do
+it 'edit login password should initialize without errors' do
+     expect {operations.edit_login_password(01, '', '') }.not_to raise_error
+end
+end
+
+context '#insert_data_edit_project' do
+it 'insert_data_edit_project should initialize without errors' do
+     expect {operations.insert_data_edit_project(01, '', '', '') }.not_to raise_error
+end
+end
+
+
 
 end
