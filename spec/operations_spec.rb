@@ -139,7 +139,7 @@ end
 
 context '#remove_account' do
    it 'correctly removes account' do
-     expect { operations.remove_project(0) }.not_to raise_error
+     expect { operations.remove_account(0) }.not_to raise_error
    end
    it 'does not remove account that does not exist' do
      expect { operations.remove_account(5) }.not_to raise_error
