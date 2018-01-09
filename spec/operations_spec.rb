@@ -128,8 +128,4 @@ context '#remove_account' do
      expect { operations.remove_account(5) }.not_to raise_error
    end
 end
-
-
-
-
 end
