@@ -76,12 +76,12 @@ class Program
     puts 'Wprowadz ID projektu ktory chcesz edytowac:'
     id = gets.chomp
     puts 'Podaj nazwe projektu:'
-    projectname = gets.chomp
+    project = gets.chomp
     puts 'Podaj date rozpoczecia:'
     date = gets.chomp
     puts 'Podaj date koncowa:'
     deadlinedate = gets.chomp
-    @program.edit_project(id, projectname, date, deadlinedate)
+    @program.edit_project(id, project, date, deadlinedate)
     next_step
     gets.chomp
   end
