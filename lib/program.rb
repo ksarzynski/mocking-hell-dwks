@@ -45,7 +45,7 @@ class Program
         accounts_submenu
         case gets.chomp
         when '1'
-          show_account_action
+          @program.listOfAccounts
         when '2'
           edit_account_action
         when '3'
@@ -123,14 +123,6 @@ class Program
     @program.add_account(login, password)
   end
 
-  def show_account_action
-    puts 'Wprowadz ID konta:'
-    id = gets.chomp
-    @program.show_account(id.to_i)
-    next_step
-    gets.chomp
-  end
-
   def edit_account_action
     puts 'Wprowadz ID konta do edycji:'
     id = gets.chomp
@@ -152,7 +144,7 @@ class Program
   end
 
   def accounts_submenu
-    puts '    1 : Pokaz szczegoly'
+    puts '    1 : Pokaz wszystkich'
     puts '    2 : Edytuj konto'
     puts '    3 : Usun konto'
   end
