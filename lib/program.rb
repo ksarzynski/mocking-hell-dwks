@@ -29,7 +29,7 @@ class Program
         accounts_submenu
         choice = gets.chomp
         acoounts_choice(choice)
-      else command_not_found
+      else 'Nie rozpoznano komendy'
       end
       break if input.chomp == '4'
     end
@@ -39,7 +39,6 @@ class Program
     puts 'Wprowadz ID projektu do usuniecia:'
     id = gets.chomp
     @program.remove_account(id.to_i)
-    next_step
     gets.chomp
   end
 
@@ -65,7 +64,6 @@ class Program
     puts 'Wprowadz ID projektu:'
     id = gets.chomp
     @program.show_project(id.to_i)
-    next_step
     gets.chomp
   end
 
@@ -73,7 +71,6 @@ class Program
     puts 'Wprowadz ID pracownika do usuniecia:'
     id = gets.chomp
     @program.remove_employee(id.to_i)
-    next_step
     gets.chomp
   end
 
@@ -87,12 +84,7 @@ class Program
     puts 'Podaj pensje:'
     salary = gets.chomp
     @program.edit_employee(id, name, lastname,salary)
-    next_step
     gets.chomp
-  end
-
-  def command_not_found
-    puts 'Nie rozpoznano komendy'
   end
 
   def employees_submenu
@@ -126,7 +118,6 @@ class Program
     puts 'Podaj haslo:'
     password = gets.chomp
     @program.edit_employee(id, login, password)
-    next_step
     gets.chomp
   end
 
@@ -134,7 +125,6 @@ class Program
     puts 'Podaj id:'
     id = gets.chomp
     @program.remove_employee(id)
-    next_step
     gets.chomp
   end
 
@@ -148,10 +138,6 @@ class Program
     puts '    1 : Pokaz szczegoly'
     puts '    2 : Edytuj projekt'
     puts '    3 : Usun projekt'
-  end
-
-  def next_step
-    puts 'Co chcesz teraz zrobic?'
   end
 
   def menu
