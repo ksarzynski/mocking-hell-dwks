@@ -195,9 +195,7 @@ end
       @@project.insert(id, project)
       puts "Dodano nowy projekt o ID => #{@@project[id].id}."
     else
-      puts "Projekt o ID => #{account_id} nie istnieje w bazie." if @@accounts[project_id].nil?
-      puts "Projekt o ID => #{project_id} nie istnieje w bazie." if @@projects[project_id].nil?
-      puts 'Błąd przy dodawaniu.'
+      puts 'Błąd przy dodawaniu. Nie odnaleziono danych o podanym id'
     end
   end
 
