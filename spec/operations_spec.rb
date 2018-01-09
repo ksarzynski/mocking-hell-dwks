@@ -14,7 +14,7 @@ RSpec.describe 'Operations' do
         salary = '1200'
         expect { operations.add_employee(firstname, lastname, salary) }.not_to raise_error
       end
-      context 'when employee not found' do
+      context '#employee_not_found' do
      it {
        id = 5
        expect { operations.add_employee(id, '', '', '') }.to raise_error
@@ -28,7 +28,7 @@ end
       password = 'haslo'
       expect { operations.add_account(login, password) }.not_to raise_error
     end
-    context 'when account not found' do
+    context '#account_not_found' do
    it {
      id = 5
      expect { operations.add_account(id, '', '', '') }.to raise_error
@@ -43,8 +43,8 @@ end
     deadlinedate = Date.parse('2018-01-09')
    expect { operations.add_project(name, date, deadlinedate) }.not_to raise_error
 end
-context '#when project not found' do
-it {
+  context '#project_not_found' do
+    it {
  id = 5
  expect { operations.add_project(id, '', '', '') }.to raise_error
 }
@@ -84,7 +84,13 @@ context '#show_account' do
    it 'does not show a account that does not exist' do
       expect { operations.show_account(2) }.not_to raise_error
     end
-end
+    context '#account_not_found' do
+   it {
+     id = 5
+     expect { operations.show_account(id, '', '', '') }.to raise_error
+   }
+  end
+  end
 
 context '#show_project' do
     it 'correctly shows project' do
@@ -93,7 +99,13 @@ context '#show_project' do
    it 'does not show a account that does not exist' do
       expect { operations.show_project(2) }.not_to raise_error
     end
-end
+    context '#account_not_found' do
+   it {
+     id = 5
+     expect { operations.show_project(id, '', '', '') }.to raise_error
+   }
+  end
+  end
 
 context '#show_all_developments' do
     it 'correctly shows all developments in account' do
@@ -147,37 +159,37 @@ context '#remove_account' do
 end
 
 context '#print_list_of_accounts' do
-it 'list of accounts should initialize without errors' do
+  it 'list of accounts should initialize without errors' do
      expect {operations.listOfAccounts }.not_to raise_error
 end
 end
 
 context '#print_list_of_employees' do
-it 'list of employees should initialize without errors' do
+  it 'list of employees should initialize without errors' do
      expect {operations.listOfEmployees }.not_to raise_error
 end
 end
 
 context '#create_sample_development' do
-it 'create sample development should initialize without errors' do
+  it 'create sample development should initialize without errors' do
      expect {operations.create_sample_development }.not_to raise_error
 end
 end
 
 context '#insert_data_edit_employee' do
-it 'insert data edit employee should initialize with errors with null values' do
+  it 'insert data edit employee should initialize with errors with null values' do
      expect {operations.insert_data_edit_employee(01, '', '', '') }.to raise_error
 end
 end
 
 context '#edit_login_password' do
-it 'edit login password should initialize without errors' do
+  it 'edit login password should initialize without errors' do
      expect {operations.edit_login_password(01, '', '') }.not_to raise_error
 end
 end
 
 context '#insert_data_edit_project' do
-it 'insert_data_edit_project should initialize without errors' do
+  it 'insert_data_edit_project should initialize without errors' do
      expect {operations.insert_data_edit_project(01, '', '', '') }.not_to raise_error
 end
 end
