@@ -52,8 +52,6 @@ class Program
           edit_account_action
         when '3'
           remove_account_action
-        when '4'
-          show_accounts_action
         else
           command_not_found
         end
@@ -164,17 +162,10 @@ class Program
     gets.chomp
   end
 
-  def show_accounts_action
-    @program.listOfAccounts
-    next_step
-    gets.chomp
-  end
-
   def accounts_submenu
     puts '    1 : Pokaz szczegoly'
     puts '    2 : Edytuj konto'
     puts '    3 : Usun konto'
-    puts '    4 : Pokaz wszystkie'
   end
 
     def activity_submenu
