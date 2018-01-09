@@ -28,8 +28,6 @@ class Program
           remove_employee_action
         when '4'
           addEmployees_submenu
-          when '5'
-            @program.listOfEmployees
         else
           command_not_found
         end
