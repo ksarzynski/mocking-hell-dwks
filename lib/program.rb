@@ -21,7 +21,7 @@ class Program
         employees_submenu
         case gets.chomp
         when '1'
-          show_employee_action
+          @program.listOfEmployees
         when '2'
           edit_employee_action
         when '3'
@@ -96,24 +96,15 @@ class Program
     gets.chomp
   end
 
-  def show_employee_action
-    puts 'Wprowadz ID pracownika:'
-    id = gets.chomp
-    @program.show_employee(id.to_i)
-    next_step
-    gets.chomp
-  end
-
   def command_not_found
     puts 'Nie rozpoznano komendy'
   end
 
   def employees_submenu
-    puts '    1 : Pokaz szczegoly'
+    puts '    1 : Pokaz wszystkich'
     puts '    2 : Edytuj pracownika'
     puts '    3 : Usun pracownika'
     puts '    4 : Dodaj pracownika'
-    puts '    5 : Pokaz wszystkich'
   end
 
   def addEmployees_submenu
