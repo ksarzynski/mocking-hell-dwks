@@ -59,16 +59,10 @@ class Program
   end
 
   def acoounts_choice(parameter) 
-    case parameter
-    when '1'
-    @program.listOfAccounts 
-    when '2'
-    edit_account_action
-    when '3'
-    remove_account_action
-    else 
-      command_not_found
-    end
+    @program.listOfAccounts if parameter == '1'
+    edit_account_action if parameter == '2'
+    remove_account_action if parameter == '3'
+    command_not_found else 
   end
 
   def show_project_action
