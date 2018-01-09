@@ -201,14 +201,6 @@ end
     end
   end
 
-  def show_development(id)
-    if !@@developments.at(id).nil?
-      puts "Dane projektu o ID => #{@@developments[id].id}: #{@@developments[id]}"
-    else
-      puts "Dane projektu o ID => #{id} nie istnieje w bazie."
-    end
-  end
-
   def show_all_developments
     puts 'Statystyki:'
     i = 0
