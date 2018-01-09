@@ -160,7 +160,7 @@ class Program
     gets.chomp
   end
 
-  def edit_employee_action
+  def edit_account_action
     puts 'Wprowadz ID konta do edycji:'
     id = gets.chomp
     puts 'Podaj login:'

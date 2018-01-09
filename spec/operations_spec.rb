@@ -78,15 +78,6 @@ context '#show_project' do
     end
 end
 
-context '#show_development' do
-    it 'correctly shows development' do
-     expect { operations.show_development(0) }.not_to raise_error
-    end
-   it 'does not show a development that does not exist' do
-      expect { operations.show_development(2) }.not_to raise_error
-    end
-end
-
 context '#show_all_developments' do
     it 'correctly shows all developments in account' do
       expect { operations.show_all_developments }.not_to raise_error
