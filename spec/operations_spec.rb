@@ -128,4 +128,18 @@ context '#remove_account' do
      expect { operations.remove_account(5) }.not_to raise_error
    end
 end
+
+context '#print_list_of_accounts' do
+it 'list of accounts should initialize without errors' do
+     expect {operations.listOfAccounts }.not_to raise_error
+end
+end
+
+context '#print_list_of_employees' do
+it 'list of employees should initialize without errors' do
+     expect {operations.listOfEmployees }.not_to raise_error
+end
+end
+
+
 end
