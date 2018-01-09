@@ -31,7 +31,7 @@ end
     context 'when account not found' do
    it {
      id = 5
-     expect { operations.add_employee(id, '', '', '') }.to raise_error
+     expect { operations.add_account(id, '', '', '') }.to raise_error
    }
  end
 end
@@ -181,5 +181,11 @@ it 'insert_data_edit_project should initialize without errors' do
      expect {operations.insert_data_edit_project(01, '', '', '') }.not_to raise_error
 end
 end
+
+context '#edit_account' do
+  it 'edit account should initialize without errors' do
+       expect {operations.edit_account(01, '', '') }.not_to raise_error
+  end
+  end
 
 end
