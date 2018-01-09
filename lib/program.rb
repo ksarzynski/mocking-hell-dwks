@@ -19,32 +19,17 @@ class Program
       case input
       when '1'
         employees_submenu
-        case gets.chomp
-        when '1'
-          @program.listOfEmployees
-        when '2'
-          edit_employee_action
-        when '3'
-          remove_employee_action
-        when '4'
-          addEmployees_submenu
-        else
-          command_not_found
-        end
+        choice = gets.chomp
+        employee_choice(choice)
       when '2'
         activity_submenu
-        case gets.chomp
-        when '1'
-          show_project_action
-        when '2'
-          remove_project_action
-        else
-          command_not_found
-        end
+        choice = gets.chomp
+        activity_choice(choice)
       when '3'
         accounts_submenu
         choice = gets.chomp
         acoounts_choice(choice)
+      else command_not_found
       end
       break if input.chomp == '4'
     end
@@ -61,8 +46,19 @@ class Program
   def acoounts_choice(parameter) 
     @program.listOfAccounts if parameter == '1'
     edit_account_action if parameter == '2'
-    remove_account_action if parameter == '3'
-    command_not_found else 
+    remove_account_action if parameter == '3' 
+  end
+
+  def activity_choice(parameter) 
+    show_project_action if parameter == '1'
+    remove_project_action if parameter == '2'
+  end
+
+  def employee_choice(parameter) 
+    @program.listOfEmployees if parameter == '1'
+    edit_employee_action if parameter == '2'
+    remove_employee_action if parameter == '3'
+    addEmployees_submenu if parameter == '4' 
   end
 
   def show_project_action
