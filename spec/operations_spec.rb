@@ -14,7 +14,13 @@ RSpec.describe 'Operations' do
         salary = '1200'
         expect { operations.add_employee(firstname, lastname, salary) }.not_to raise_error
       end
-    end
+      context 'when employee not found' do
+     it {
+       id = 5
+       expect { operations.add_employee(id, '', '', '') }.to raise_error
+     }
+   end
+end
 
     context '#add_account' do
     it 'correctly adds a new account' do
@@ -22,6 +28,12 @@ RSpec.describe 'Operations' do
       password = 'haslo'
       expect { operations.add_account(login, password) }.not_to raise_error
     end
+    context 'when account not found' do
+   it {
+     id = 5
+     expect { operations.add_employee(id, '', '', '') }.to raise_error
+   }
+ end
 end
 
   context '#add_project' do
@@ -30,6 +42,12 @@ end
     date = Date.parse('2018-01-09')
     deadlinedate = Date.parse('2018-01-09')
    expect { operations.add_project(name, date, deadlinedate) }.not_to raise_error
+end
+context '#when project not found' do
+it {
+ id = 5
+ expect { operations.add_project(id, '', '', '') }.to raise_error
+}
 end
 end
 
@@ -42,12 +60,11 @@ context '#add_project' do
 end
 end
 
-context 'add_developments' do
+context '#add_developments' do
   it 'correctly adds a new developments' do
-  name = 'ksarzynski'
-  date = Date.parse('2018-01-09')
-  deadlinedate = Date.parse('2018-01-09')
- expect { operations.add_project(name, date, deadlinedate) }.not_to raise_error
+  account_id = 01
+  project_id = 01
+  expect { operations.add_developments(account_id, project_id) }.not_to raise_error
 end
 end
 
@@ -164,7 +181,5 @@ it 'insert_data_edit_project should initialize without errors' do
      expect {operations.insert_data_edit_project(01, '', '', '') }.not_to raise_error
 end
 end
-
-
 
 end
