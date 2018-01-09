@@ -15,6 +15,23 @@ class Operations
     end
 end
 
+  def add_sample_employees
+    add_employee('Dawid', 'Wiecko', 1200.00)
+    add_employee('Kamil', 'Sarzynski', 1200.00)
+  end
+
+  def add_sample_project
+    add_project('Intel','2018-01-03 00:00:00', '2018-01-05 00:00:00')
+    add_project('IBM','2018-01-04 00:00:00', '2018-01-05 00:00:00')
+    add_project('Intel','2018-01-02 00:00:00', '2018-01-07 00:00:00')
+    add_project('IBM','2018-01-01 00:00:00', '2018-01-10 00:00:00')
+  end
+
+  def create_sample_account
+    add_account('dwiecko', 'haslo123' )
+    add_account('ksarzynski', 'password')
+  end
+
   def create_sample_development
     Development.new(0, @@accounts[0], @@projects[0])
     Development.new(1, @@accounts[0], @@projects[1])
@@ -22,7 +39,7 @@ end
     Development.new(0, @@accounts[1], @@projects[2])
     Development.new(1, @@accounts[1], @@projects[3])
   end
-
+  
   def add_employee(firstname, lastname, salary)
     size = @@employee.size
     id = 0
@@ -178,8 +195,18 @@ end
       @@project.insert(id, project)
       puts "Dodano nowy projekt o ID => #{@@project[id].id}."
     else
-      puts 'Nie odnaleziono danych o podanym ID'
+      puts "Projekt o ID => #{account_id} nie istnieje w bazie." if @@accounts[project_id].nil?
+      puts "Projekt o ID => #{project_id} nie istnieje w bazie." if @@projects[project_id].nil?
       puts 'Błąd przy dodawaniu.'
+    end
+  end
+
+  def show_all_developments
+    puts 'Statystyki:'
+    i = 0
+    while i < @@developments.size
+      puts "Dane projektu o ID => #{@@developments[i].id}: #{@@developments[i]}" unless @@developments.at(i).nil?
+      i += 1
     end
   end
 end
