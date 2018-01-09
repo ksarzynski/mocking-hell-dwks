@@ -195,10 +195,27 @@ class Program
     puts '4 : Koniec'
   end
 
+  def add_sample_employees
+    @program.add_employee('Dawid', 'Wiecko', 1200.00)
+    @program.add_employee('Kamil', 'Sarzynski', 1200.00)
+  end
+
+  def add_sample_project
+    @program.add_project('Intel','2018-01-03 00:00:00', '2018-01-05 00:00:00')
+    @program.add_project('IBM','2018-01-04 00:00:00', '2018-01-05 00:00:00')
+    @program.add_project('Intel','2018-01-02 00:00:00', '2018-01-07 00:00:00')
+    @program.add_project('IBM','2018-01-01 00:00:00', '2018-01-10 00:00:00')
+  end
+
+  def create_sample_account
+    @program.add_account('dwiecko', 'haslo123' )
+    @program.add_account('ksarzynski', 'password')
+  end
+  
   def start
-   @program.add_sample_employees
-   @program.create_sample_account
-   @program.add_sample_project
+   add_sample_employees
+   create_sample_account
+   add_sample_project
    @program.create_sample_development
   end
 end
