@@ -39,8 +39,6 @@ class Program
         when '1'
           show_project_action
         when '2'
-          edit_project_action
-        when '3'
           remove_project_action
         else
           command_not_found
@@ -68,20 +66,6 @@ class Program
     puts 'Wprowadz ID projektu do usuniecia:'
     id = gets.chomp
     @program.remove_account(id.to_i)
-    next_step
-    gets.chomp
-  end
-
-  def edit_project_action
-    puts 'Wprowadz ID projektu ktory chcesz edytowac:'
-    id = gets.chomp
-    puts 'Podaj nazwe projektu:'
-    project = gets.chomp
-    puts 'Podaj date rozpoczecia:'
-    date = gets.chomp
-    puts 'Podaj date koncowa:'
-    deadlinedate = gets.chomp
-    @program.edit_project(id, project, date, deadlinedate)
     next_step
     gets.chomp
   end
