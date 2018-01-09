@@ -59,14 +59,8 @@ class Program
         else
           command_not_found
         end
-      when '4'
-        authors
       end
-      puts ' '
-      puts ' '
-
-      next_step
-      break if input.chomp == '5'
+      break if input.chomp == '4'
     end
   end
 
@@ -79,11 +73,11 @@ class Program
   end
 
   def edit_project_action
-    puts 'Wprowadz ID projektu do edycji:'
+    puts 'Wprowadz ID projektu ktory chcesz edytowac:'
     id = gets.chomp
-    puts 'Podaj nazwe:'
+    puts 'Podaj nazwe projektu:'
     name = gets.chomp
-    puts 'Podaj date:'
+    puts 'Podaj date rozpoczecia:'
     date = gets.chomp
     puts 'Podaj date koncowa:'
     deadlinedate = gets.chomp
@@ -210,18 +204,11 @@ class Program
   end
 
   def menu
-    puts '*****     Baza danych pracownikow firmy IT     *****'
+    puts '****     Baza danych pracownikow firmy IT     ***'
     puts '1 : Pracownicy'
     puts '2 : Projekty'
     puts '3 : Konta'
-    puts '4 : Autorzy'
-    puts '5 : Koniec'
-  end
-
-  def authors
-    puts 'Autorzy:'
-    puts 'Dawid Wiecko'
-    puts 'Kamil Sarzynski'
+    puts '4 : Koniec'
   end
 
   def start
